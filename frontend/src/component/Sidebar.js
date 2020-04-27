@@ -6,14 +6,14 @@ import { Link } from 'react-router-dom';
 
 export const Sidebar = (
   <div>
-    <ListItem button component={Link} to="/react_client/">
+    <ListItem button component={Link} to="/">
       <ListItemIcon>
         <Home />
       </ListItemIcon>
       <ListItemText primary="Home" />
     </ListItem>
    
-    <ListItem button component={Link} to="/react_client/product">
+    <ListItem button component={Link} to="/product">
       <ListItemIcon>
         <PlusOne />
       </ListItemIcon>

@@ -44,7 +44,7 @@ export  function ForgotPassword(props) {
   let authRedirect = null;
   props.onSetAuthRedirectPath()
   if (props.authRedirectPath!=="/") {
-    props.history.push("/react_client")
+    props.history.push("/")
     window.location.reload(false)  
   }
 
@@ -92,12 +92,12 @@ export  function ForgotPassword(props) {
           </Button>
           <Grid container>
             <Grid item xs>
-            <Link href="/react_client/sign-in" variant="body2">
+            <Link href="/sign-in" variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>
             <Grid item>
-              <Link href="/react_client/sign-up" variant="body2">
+              <Link href="/sign-up" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>

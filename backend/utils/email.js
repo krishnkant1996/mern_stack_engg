@@ -25,7 +25,6 @@ let transporter = nodemailer.createTransport(smtpTransport(emailConfig));
 
 
 module.exports.sendMail = async (data) => {
-	console.log(data)
 	if (!data.hasOwnProperty('html')) {
 		//Get email Template path //Point Folder - Project > emailTemplate
 		// let currentPath = path.join(__dirname, '..', 'templates', 'email');

@@ -1,9 +1,7 @@
 let path = require('path')
 let NODE_ENV = process.env.NODE_ENV;
 
-console.log(NODE_ENV)
 if(NODE_ENV === 'LOCAL') {
-console.log(NODE_ENV)
   require('dotenv').config({path : path.join(process.cwd(), '.env.local')})
 } else if(NODE_ENV === 'DEVELOPMENT') {
   require('dotenv').config({path : path.join(process.cwd(), '.env.development')})
@@ -15,7 +13,6 @@ console.log(NODE_ENV)
   require('dotenv').config({path : path.join(process.cwd(), '.env.local')})
 }
 
-console.log(process.env.DB_USERNAME)
 
 module.exports = {
   [NODE_ENV] : {

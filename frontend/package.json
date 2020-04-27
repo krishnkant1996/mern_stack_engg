@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://krishnkant1996.github.io/react_client/",
+  "homepage": "http://dev-kk-prod.tk/",
   "dependencies": {
     "@date-io/date-fns": "^1.3.13",
     "@date-io/moment": "^1.3.13",
@@ -20,17 +20,15 @@
     "react": "^16.13.1",
     "react-datepicker": "^2.14.1",
     "react-dom": "^16.13.1",
-    "react-google-charts": "^3.0.15",
     "react-google-login": "^5.1.2",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
-    "recharts": "^1.8.5",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "HTTPS=true react-scripts start",
+    "start": " react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

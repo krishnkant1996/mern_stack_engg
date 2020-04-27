@@ -45,7 +45,7 @@ export  function SignIn(props) {
   let authRedirect = null;
   props.onSetAuthRedirectPath()
   if (props.authRedirectPath!=="/") {
-    props.history.push("/react_client")
+    props.history.push("/")
     window.location.reload(false)  
   }
 
@@ -110,12 +110,12 @@ export  function SignIn(props) {
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link href="/react_client/forgot-password" variant="body2">
+              <Link href="/forgot-password" variant="body2">
                 Forgot password?
               </Link>
             </Grid>
             <Grid item>
-              <Link href="/react_client/sign-up" variant="body2">
+              <Link href="/sign-up" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>

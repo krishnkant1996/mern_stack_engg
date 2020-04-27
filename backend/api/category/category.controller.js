@@ -13,7 +13,6 @@ exports.categoryList = async(req, res) => {
         }
         return responses.response(res, false, {}, 'en', data.messages, data.status)
     }catch(errors) {
-        console.log(errors)
         return responses.response(res, false, {}, 'en', 'INTERNAL_SERVER_ERROR', HTTP_STATUS.INTERNAL_SERVER_ERROR)
     }
 }

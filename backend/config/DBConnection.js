@@ -16,7 +16,6 @@ exports.getSqlConnection = () => {
 			acquire: 30000
 		}
 	});
-	console.log(process.env.DEBUG)
 	if (process.env.DEBUG === 'true') {
 		seqInstance
 			.authenticate()

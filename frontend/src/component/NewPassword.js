@@ -45,7 +45,7 @@ export  function NewPassword(props) {
   let authRedirect = null;
   props.onSetAuthRedirectPath()
   if (props.authRedirectPath!=="/") {
-    props.history.push("/react_client")
+    props.history.push("/")
     window.location.reload(false)  
   }
 

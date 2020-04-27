@@ -43,7 +43,6 @@ export function ProductList(props) {
   }, [getProduct]);
 
   let pageCount = parseInt(props.count/10);
-  console.log(props.count%10===0)
   pageCount=props.count%10===0?pageCount:pageCount+1;
 
   return (

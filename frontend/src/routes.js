@@ -16,17 +16,17 @@ const AppRouter = () => (
   <Router history={history}>
     <div>
       <Switch>
-        <Route exact path="/react_client/new-password/:code" component={NewPassword} />
+        <Route exact path="/new-password/:code" component={NewPassword} />
         {sigIn?
           <>
-          <Route path="/react_client" component={Home} />
+          <Route path="/" component={Home} />
           </>
         :
           <>   
-          <Route exact path="/react_client" component={SignIn} />
-          <Route exact path="/react_client/sign-in" component={SignIn} />
-          <Route exact path="/react_client/sign-up" component={SignUp} />
-          <Route exact path="/react_client/forgot-password" component={ForgotPassword} />
+          <Route exact path="/" component={SignIn} />
+          <Route exact path="/sign-in" component={SignIn} />
+          <Route exact path="/sign-up" component={SignUp} />
+          <Route exact path="/forgot-password" component={ForgotPassword} />
           </>
         }
       </Switch>

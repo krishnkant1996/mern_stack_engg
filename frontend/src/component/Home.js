@@ -95,7 +95,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export  function Home(props) {
-  console.log(props)
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
@@ -107,7 +106,7 @@ export  function Home(props) {
   let authRedirect = null;
   props.onSetAuthRedirectPath()
   if (props.authRedirectPath!=="/") {
-    props.history.push("/react_client")
+    props.history.push("/")
     window.location.reload(false)  
   }
 
@@ -151,8 +150,8 @@ export  function Home(props) {
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
-        <Route exact path="/react_client/" component={Profile}/>
-          <Route exact path="/react_client/product" component={Product}/>
+        <Route exact path="/" component={Profile}/>
+          <Route exact path="/product" component={Product}/>
           
           <Box pt={4}>
             <Copyright />

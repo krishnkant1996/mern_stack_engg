@@ -18,13 +18,11 @@ export const fetchProductFailed = () => {
 };
 
 export const getProduct = (data) => {
-    console.log(data)
     let page =typeof data.page!=="undefined"?data.page: 1;
     let search = typeof data.search!=="undefined"?data.search:"";
     return dispatch => {
         axios.get(apiUrl+`/product/product-list/?page=${page}&search=${search}`,headers)
         .then( response => {
-            console.log(response.data)
             dispatch(setProduct(response.data.data));
 
         })
@@ -51,7 +49,7 @@ export const addProduct = (data) => {
               }).then( response => {
                 dispatch(setAlert({open:true,message:response.data.message,status:"success"}));
 
-                dispatch(getProduct());
+                dispatch(getProduct({page:1,search:""}));
              } )
             .catch( error => {
                 dispatch(setAlert({open:true,message:error.response.data.message,status:"error"}));
@@ -68,15 +66,15 @@ export const addProduct = (data) => {
                 data:{
                     product_name,category_id
                 },
-              }).then( response => {
+            }).then( response => {
                 dispatch(setAlert({open:true,message:response.data.message,status:"success"}));
-                dispatch(getProduct());
+                dispatch(getProduct({page:1,search:""}));
              } )
             .catch( error => {
                 dispatch(setAlert({open:true,message:error.response.data.message,status:"error"}));
-
                 dispatch(fetchProductFailed());
             } );
+
         }
         
     }
@@ -91,9 +89,8 @@ export const deleteProduct = (id) => {
            
           }).then( response => {
             dispatch(setAlert({open:true,message:response.data.message,status:"success"}));
-
-            dispatch(getProduct());
-         } )
+            dispatch(getProduct({page:1,search:""}));
+        } )
         .catch( error => {
             dispatch(setAlert({open:true,message:error.response.data.message,status:"error"}));
             dispatch(fetchProductFailed());

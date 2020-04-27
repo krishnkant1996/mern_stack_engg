@@ -29,7 +29,7 @@ export const logout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('signIn');
     return dispatch => {
-        dispatch(setAuthRedirectPath('/react_client/sign-in'));
+        dispatch(setAuthRedirectPath('/sign-in'));
 
     };
     
@@ -53,11 +53,10 @@ export const auth = (data) => {
             localStorage.setItem('token', response.data.data.token);
             localStorage.setItem('signIn', true);
             setTimeout(()=>{
-                dispatch(setAuthRedirectPath('/react_client/profile'));
+                dispatch(setAuthRedirectPath('/profile'));
             },3000)
         })
         .catch( error => {
-            console.log(error.response.data)
             let {message } = error.response.data
             let status = "error";
             dispatch(setAlert({open:true,message,status}));
@@ -98,11 +97,10 @@ export const setSignUp = (data) =>{
                 let status = "success";
                 dispatch(setAlert({open:true,message,status}));
                 setTimeout(()=>{
-                    dispatch(setAuthRedirectPath('/react_client/sign-in'));
+                    dispatch(setAuthRedirectPath('/sign-in'));
                 },3000)
             })
             .catch( error => {
-                console.log(error.response.data)
                 let {message } = error.response.data
                 let status = "error";
                 dispatch(setAlert({open:true,message,status}));
@@ -121,11 +119,10 @@ export const getUserDetails = () => {
     return dispatch => {
         axios.get(apiUrl+'/auth/user-details',headers)
         .then( response => {
-            console.log(response.data)
             dispatch(setUserDetails(response.data.data));
         })
         .catch( error => {
-            dispatch(setAuthRedirectPath('/react_client/sign-in'));
+            dispatch(setAuthRedirectPath('/sign-in'));
         } );
     }       
 };
@@ -138,11 +135,10 @@ export const setForgotPassword = (data) =>{
             let status = "success";
             dispatch(setAlert({open:true,message,status}));
             setTimeout(()=>{
-                dispatch(setAuthRedirectPath('/react_client/sign-in'));
+                dispatch(setAuthRedirectPath('/sign-in'));
             },3000)
         })
         .catch( error => {
-            console.log(error.response.data)
             let {message } = error.response.data
             let status = "error";
             dispatch(setAlert({open:true,message,status}));
@@ -159,11 +155,10 @@ export const setNewPassword = (data) =>{
             let status = "success";
             dispatch(setAlert({open:true,message,status}));
             setTimeout(()=>{
-                dispatch(setAuthRedirectPath('/react_client/sign-in'));
+                dispatch(setAuthRedirectPath('/sign-in'));
             },3000)
         })
         .catch( error => {
-            console.log(error.response.data)
             let {message } = error.response.data
             let status = "error";
             dispatch(setAlert({open:true,message,status}));

@@ -68,7 +68,6 @@ exports.verifyUser = async(email=null, transactionId=null) => {
 exports.forgotPassWord = async(email=null,transactionId=null) => {
     let existUser = await DB.User.findUserByEmail(email, transactionId);
     if(existUser) {
-        console.log("options")
 
         let userData = {
             forgot_guid: uniqid() + uniqid()        
@@ -79,11 +78,10 @@ exports.forgotPassWord = async(email=null,transactionId=null) => {
         };
 
         const userInfo = await DB.User.updateUser(options, userData, transactionId);
-        console.log("userInfo",userInfo)
 
         if (userInfo) {
         let subject = 'FORGOT PASSWORD '+ String(existUser.first_name).toUpperCase()
-        mail.sendMail({template: 'invitation-template',to: existUser.email, subject: subject, url : process.env.CLIENT_DOMAIL_URL+`react_client/new-password/${userData.forgot_guid}`, username: existUser.first_name + " " + existUser.last_name});
+        mail.sendMail({template: 'invitation-template',to: existUser.email, subject: subject, url : process.env.CLIENT_DOMAIL_URL+`new-password/${userData.forgot_guid}`, username: existUser.first_name + " " + existUser.last_name});
         return { success: true, data: {}, messages: 'RESET_PASSWORD_MAIL_SEND_SUCCESSFULLY' };
         }
     }

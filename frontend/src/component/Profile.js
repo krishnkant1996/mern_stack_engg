@@ -30,7 +30,6 @@ export  function Profile(props) {
   useEffect(() => {
     getUserDetails();
   }, [getUserDetails]);
-  console.log(user)
   const classes = useStyles();
 
   return (

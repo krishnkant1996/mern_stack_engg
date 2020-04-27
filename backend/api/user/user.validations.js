@@ -19,7 +19,6 @@ exports.createUser = (req, res, next) => {
 }
 
 exports.signIn = (req, res, next) => {
-    console.log(req.body)
 
     let schema = Joi.object().keys({
         email: Joi.string().email().required(),
