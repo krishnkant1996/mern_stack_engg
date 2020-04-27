@@ -122,7 +122,7 @@ export const getUserDetails = () => {
             dispatch(setUserDetails(response.data.data));
         })
         .catch( error => {
-            dispatch(setAuthRedirectPath('/sign-in'));
+            dispatch(logout());
         } );
     }       
 };

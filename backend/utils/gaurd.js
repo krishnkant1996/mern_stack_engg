@@ -12,7 +12,7 @@ module.exports.verifyToken =  async(req, res, next) => {
        return responses.response(res, false, {}, 'en', 'UNAUTHORIZED USER', HTTP_STATUS.UNAUTHORIZED)
     }
 
-    } catch {
+    }catch {
     return responses.response(res, false, {}, 'en', 'UNAUTHORIZED USER', HTTP_STATUS.UNAUTHORIZED)
     }
     }
