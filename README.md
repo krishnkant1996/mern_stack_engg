@@ -4,7 +4,7 @@ Backend
 step to run :-
 
     cd backend
-    cp env_sample .env.local
+    cp env.sample .env.local
     npm i
     export NODE_ENV=LOCAL
     npm run migration:up
