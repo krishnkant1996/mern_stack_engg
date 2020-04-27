@@ -1,0 +1,16 @@
+export const AUTH_START = 'AUTH_START';
+export const AUTH_SUCCESS = 'AUTH_SUCCESS';
+export const AUTH_FAIL = 'AUTH_FAIL';
+export const AUTH_LOGOUT = 'AUTH_LOGOUT';
+export const SET_USER = 'SET_USER';
+
+export const SET_AUTH_REDIRECT_PATH = 'SET_AUTH_REDIRECT_PATH';
+
+export const SET_PRODUCT = 'SET_PRODUCT';
+export const FETCH_PRODUCT_FAILED = 'FETCH_PRODUCT_FAILED';
+
+export const SET_CATEGORY = 'SET_CATEGORY';
+export const FETCH_CATEGORY_FAILED = 'FETCH_CATEGORY_FAILED';
+
+
+export const SET_ALERT = 'SET_ALERT';
